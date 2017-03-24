@@ -1,4 +1,4 @@
-# ²é¿´Í¼Æ¬ÇÐ»»½Ç¶È
+#Bitmap roatation
 
     public static int checkDeviceAutoRotateBitmap(String photoPath) {
         try {
