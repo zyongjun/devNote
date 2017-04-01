@@ -9,3 +9,6 @@ http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653578489&idx=1&sn=17d6e65
 
 ### Android blog
 https://hujiaweibujidao.github.io/android/
+
+###springannimation
+https://www.thedroidsonroids.com/blog/android/springanimation-examples/?utm_source=Android+Weekly&utm_campaign=ab0b22b1f7-android-weekly-250&utm_medium=email&utm_term=0_4eb677ad19-ab0b22b1f7-337881353
