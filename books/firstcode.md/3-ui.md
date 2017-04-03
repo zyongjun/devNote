@@ -1,0 +1,31 @@
+###### layout_gravity
+LinearLayout方向为水平时候，在垂直方向上起作用，垂直亦然
+FrameLayout也可以使用来定位
+
+###### RelativeLayout有用的属性使控件与相对对齐
+layout_alignLeft 与控件左侧对齐
+layout_alignTop
+layout_alignRight
+layout_alignBottom 类似
+
+###### 百分比布局
+PercentFrameLayout
+PercentReleativeLayout
+支持百分比宽高和margin
+layout_widthPercent
+layout_heightPercent
+layout_marginPercent
+layout_marginLeftPercent
+layout_marginStartPercent
+layout_marginRightPercent
+layout_marginEndPercent
+layout_marginTopPercent
+layout_marginBottomPercent
+源码解析和自定义PercentLinearLayout
+http://blog.csdn.net/lmj623565791/article/details/46695347
+
+原理:主要用到类PercentLayoutHelper PercentLayoutHelper.PercentLayoutParams
+1.generateLayoutParams重写返回实现了PercentLayoutHelper.PercentLayoutParams接口的LayoutParams，这样可以通过getPercnetLayoutInfo返回PercentLayoutHelper.PercentLayoutInfo保存的percent信息
+
+2.onMessure的时候通过PercentLayoutHelper的ajustChildren方法，遍历子view，给他们的PercentLayoutParams（margin,width,height的percent如果是的话）设置百分比，如果测量的值太小而且子view的w/h为wrap_content时候，对应的重置为wrap_content重新测量
+3.onlayout中重置 宽高
