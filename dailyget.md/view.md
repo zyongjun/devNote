@@ -12,7 +12,22 @@ BaseShapeView
 4. ondraw(Canvas canvas)
 5. isfocus isvisible  shapeId
 6. shapeAction
+
+DrawingView
+1. List<BaseShapeView> listRoot
+2. currentIndex
 ----------------------
+- 创建图形
+  touch down  startx  starty
+  touch up  create endx endY
+  已经撤销部分清除掉 clearRedoSharpFromIndex（currentIndex）
+  listRoot.add  currentIndex = size
+  reset tmp virtual
+ jumpShapeToTopLayer
+ showOriginShape  currentShape = null
+
+  invalidate
+
 
 - 图形的显示
 - 图形的移动
@@ -37,7 +52,7 @@ BaseShapeView
 ---------
 1. PathEffect
 
-
+----------
 ###### Math.atan2(y2-y1,x2-x1)  计算(x1,y1)  (x2,y2)两点间的夹角，是弧度
 转换成角度 Math.atan2(y2-y1,x2-x1)*180/Math.PI
 1. 计算一定偏角与指定长度处的座标
