@@ -26,3 +26,26 @@ class Derived(b:Base):Base by b
 这里的by表示b将在Derived内部存储，并且编译器将生成Base的所有方法并转发给b
 
 #### 委托属性
+只读的属性要有getValue方法：
+operator fun getValue(thisRef:Any,property:KProperty< * >){}
+
+可写的属性要有setValue方法：
+operator fun setValue(thisRef:Any?,property:KProperty<*>,value:String){}
+
+  - 延迟属性lazy
+  val a：String by lazy{
+
+  }
+
+  - 可观察属性observable
+  var a：String by Delegates.observable( "aa" ){
+    prop,old,new->
+    ...
+  }
+  被赋值后调用处理程序
+  如果想在赋值前截获赋值并否决他
+  var a:String by Delegates.vetoable("aa"){
+    prop,old,new->
+    new=="bb"
+  }
+  如果赋值"bb"会被否决，值还是old或初始值
