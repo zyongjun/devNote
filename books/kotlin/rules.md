@@ -30,7 +30,7 @@ class Derived(b:Base):Base by b
 operator fun getValue(thisRef:Any,property:KProperty< * >){}
 
 可写的属性要有setValue方法：
-operator fun setValue(thisRef:Any?,property:KProperty<*>,value:String){}
+operator fun setValue(thisRef:Any?,property:KProperty< * >,value:String){}
 
   - 延迟属性lazy
   val a：String by lazy{
@@ -49,3 +49,9 @@ operator fun setValue(thisRef:Any?,property:KProperty<*>,value:String){}
     new=="bb"
   }
   如果赋值"bb"会被否决，值还是old或初始值
+
+  - 属性存储在map中
+  class Testt(map:Map<String,Any>){
+    val name:String by map
+  }
+  Test(mapOf("name" to "joe"))
