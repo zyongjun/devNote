@@ -1,7 +1,10 @@
 #### kotlin 语法
+==================
+question:
+- 泛型 in  , out
+- this::prop  两个冒号意思
 
-
-
+------------------------
 #### 对象表达式  也叫匿名对象
 - 只能用在本地和私有作用域
 - 如果用作公有函数的返回类型或者公有属性，那么类型会是匿名对象的超类或者any,新添加的成员无法使用
@@ -21,7 +24,7 @@
 - 对象声明是在第一次使用的时候初始化的，即延迟初始化。 而伴生对象相应的是在类被加载或者解析的时候被初始化的，和静态初始化的语义相匹配
   不过不是静态对象，仍是真实对象的实例成员，只是初始化的时间和静态语义相匹配
 
-#### 类委托
+#### 类委托 （# 不能理解，是不是多此一举 #）
 class Derived(b:Base):Base by b
 这里的by表示b将在Derived内部存储，并且编译器将生成Base的所有方法并转发给b
 
@@ -33,15 +36,20 @@ operator fun getValue(thisRef:Any,property:KProperty< * >){}
 operator fun setValue(thisRef:Any?,property:KProperty< * >,value:String){}
 
   - 延迟属性lazy
+  ```
   val a：String by lazy{
 
   }
-
+```
   - 可观察属性observable
+
+  ```
   var a：String by Delegates.observable( "aa" ){
     prop,old,new->
     ...
   }
+  ```
+
   被赋值后调用处理程序
   如果想在赋值前截获赋值并否决他
   var a:String by Delegates.vetoable("aa"){
@@ -51,7 +59,24 @@ operator fun setValue(thisRef:Any?,property:KProperty< * >,value:String){}
   如果赋值"bb"会被否决，值还是old或初始值
 
   - 属性存储在map中
+  ```
   class Testt(map:Map<String,Any>){
     val name:String by map
   }
   Test(mapOf("name" to "joe"))
+```
+  - 总结
+  ReadOnlyProperty ReadWriteProperty
+  > 委托属性原理：编译器会生成一个代理类型的隐藏属性，实际委托属性的get set代理给这个委托属性
+    ```
+      class C{
+        var a:String by MyDelegates()
+      }
+    编译器生成的类似代码
+    class c{
+      val a$delegates = MyDelegates()
+      var a:String
+        get()=a$delegates.getValue(this,this::a)
+        set(value:String)=a$delegates.setValue(this,this::a,value)
+      }
+    ```
