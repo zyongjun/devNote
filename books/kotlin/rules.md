@@ -1,7 +1,7 @@
 #### kotlin 语法
 ==================
 question:
-- 泛型 in  , out
+- 泛型 in  , out  
 - this::prop  两个冒号意思
 
 ------------------------
@@ -80,3 +80,59 @@ operator fun setValue(thisRef:Any?,property:KProperty< * >,value:String){}
         set(value:String)=a$delegates.setValue(this,this::a,value)
       }
     ```
+
+    #### 提供委托 provideDelegate 1.1起才有的特性
+  *没有测试 升级到1.1再测*
+如果属性委托by右边对象的成员或扩展函数有provideDelegate操作符方法，那么创建委托对象的时候会通过该对象的provideDelegate方法生成委托对象，通过实现该方法，可以在创建委托属性前做些事情，如检查名字
+class PDelegate<T>{
+  operator fun provideDelegate(thisRef:T,prop:KProperty< * >):ReadOnlyProperty{
+     //do somthing
+    //创建委托
+  }
+}
+
+class Test{
+  val a:String by PDelegate()
+}
+
+------------------
+
+#### 函数
+
+- 中缀表示法
+1. 成员函数或者扩展函数
+2. 只有一个参数
+3. infix修饰
+
+```
+infix Int.a(b:Int){
+
+}
+调用 1 a 2
+相当于1.a(2)
+```
+- 默认参数
+注意默认参数的重写不能带默认参数
+- 命名参数
+1.调用的时候使用参数名字来赋值，增加可读性
+2.调用java函数不能用命名参数，因为java字节码并不总是保留函数参数的名称
+
+- 可变参数 varargs
+1.一般放在最后一个参数，或者后面的用命名参数调用或lamda
+2.伸展<Spread>操作符号*,可在数组前加传入作为可变参数或者参数一部分展开
+
+- 局部函数
+函数中可以定义函数，内部的函数可以访问外部函数的局部变量
+- 泛型函数的定义和调用
+```
+fun <T> f(t:T){
+
+}
+调用f<Int>(1)
+
+对比类型泛型
+class a<T>{
+
+}
+a<Int>()
+```
