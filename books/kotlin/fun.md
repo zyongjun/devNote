@@ -66,3 +66,9 @@ t{
 ```
 val sum = fun Int.(other:Int):Int = this+other
 ```
+
+
+####内联函数
+函数用inline标记会对传的lambda函数内联，生成代码减少消耗
+如果里面的lambda有些要不被内联可以用noinline,用内联的用lined标记。
+内联的lambda只能在内联函数内部使用或作为可内联的参数传递，noinline不受限制
