@@ -156,3 +156,13 @@ a?.lenght?:""
 
 #### !!操作符
 b!!.lengh  会返回一个非空的b值，如果b为空会抛出一个NPE
+
+
+#### 注解
+```
+@Target(AnnotationTarget.CLASS)
+@Retention(AnnotationRetention.SOURCE)
+@MustBeDocumented
+annotation class hello(val hell:String)
+
+```
