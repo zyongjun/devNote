@@ -1,9 +1,5 @@
 ##kotlin
-http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=404087761&idx=1&sn=d80625ee52f860a7a2ed4c238d2151b6&mpshare=1&scene=23&srcid=0325LAGnaEiJv9wIUQ4mT50T#rd
-
-http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653578489&idx=1&sn=17d6e657d81c0daa345489271d305b36&chksm=84b3b6feb3c43fe8b0197850bf6ca8caefaa8045671f75ed6dec2171a681496365acfd0ebd33&mpshare=1&scene=23&srcid=0325AnVXbnp04LDBIFJHnBx1#rd
-
-
+http://v.qq.com/boke/gplay/903446d6231d8612d198c58fb86eb4dc_t6d000101bd9lx1.html
 
 
 
