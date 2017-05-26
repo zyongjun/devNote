@@ -20,6 +20,9 @@ https://kotlin-zhcn.github.io/
 
 https://zhuanlan.zhihu.com/bennyhuo
 
+### kotlin sample
+https://developer.android.com/samples/index.html?language=kotlin
+
 
 http://www.kotliner.cn/
 ### test kotlin ide online
