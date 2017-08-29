@@ -31,3 +31,14 @@ http://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest
 
 ### rxjava
 https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247484246&idx=1&sn=d20a9dbc15a248ff5bc7e386941e10dd&chksm=96cda21ba1ba2b0dbf3f0024e3b1ff5503919b93d031aa06504737212f7a3bc0df128e2975cf&scene=21#wechat_redirect
+
+### android onine course
+- gradle https://cn.udacity.com/course/gradle-for-android-and-java--ud867/
+- android high level https://cn.udacity.com/course/advanced-android-app-development--ud855
+
+
+### android图标生成
+在线生成
+https://romannurik.github.io/AndroidAssetStudio/icons-launcher.htm
+android studio：
+ImageAssets
