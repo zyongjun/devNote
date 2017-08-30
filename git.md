@@ -10,7 +10,7 @@ $ git push origin –tags # 将本地所有标签一次性提交到git服务器
 $ git rm cached README.md   
 $ git add .gitignore
 $ git push 
-会删除对该文件的跟踪状态，好像也删除了远程的该文件
+会删除对该文件的跟踪状态，也删除了远程的该文件
 
 - 本地忽略对文件的跟踪 除非远程该文件改变了或者本地撤销该标识   
 $ git update-index --assume-unchanged    
